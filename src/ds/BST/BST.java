@@ -1,5 +1,8 @@
 package ds.BST;
 
+import ds.Stack.LinkedListStack;
+import ds.Stack.Stack;
+
 /**
  * 这个二分搜索树不包含相同元素
  * @param <E>
@@ -89,6 +92,7 @@ public class BST<E extends Comparable<E>> {
         }
 
     }
+
     public void preOrder(){
         preOrder(root);
         System.out.println();
@@ -103,6 +107,22 @@ public class BST<E extends Comparable<E>> {
 
         preOrder(node.left);
         preOrder(node.right);
+    }
+    public void preOrderNR(){
+        LinkedListStack<Node> stack = new LinkedListStack<>();
+        stack.push(root);
+        while(!stack.isEmpty()){
+            Node cur = stack.pop();
+            System.out.print(cur.e);
+            System.out.print(" ");
+
+            if(cur.right != null){
+                stack.push(cur.right);
+            }
+            if(cur.left != null){
+                stack.push(cur.left);
+            }
+        }
     }
     public void inOrder(){
         inOrder(root);
