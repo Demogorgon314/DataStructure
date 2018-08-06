@@ -96,7 +96,7 @@ public class BST<E extends Comparable<E>> {
     }
 
     public void preOrder(){
-        preOrder(root);
+        preOrder(root);//
         System.out.println();
     }
     // 前序遍历 递归实现 mid left right
