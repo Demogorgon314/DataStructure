@@ -6,15 +6,15 @@ public class Main {
     public static void main(String[] args){
         int n = 1000000;
 
-        MaxHeap<Integer> maxHaep = new MaxHeap<>();
+        MaxHeap<Integer> maxHeap = new MaxHeap<>();
         Random random = new Random();
         for(int i = 0; i < n; i++){
-            maxHaep.add(random.nextInt(100));
+            maxHeap.add(random.nextInt(100));
         }
 
         int[] arr = new int[n];
         for(int i =0; i<n ;i++){
-            arr[i] = maxHaep.extractMax();
+            arr[i] = maxHeap.extractMax();
         }
         for(int i =1; i<n ;i++){
             if(arr[i-1] < arr[i]){
